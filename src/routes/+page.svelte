@@ -10,10 +10,11 @@
 	<div class="flex flex-wrap">
 		{#each $characters as character}
 			<!-- svelte-ignore component-name-lowercase -->
-
-			<div class="w-[250px] border-2 m-2" data-aos="fade-in">
-				<CharactersCard characters={character} />
-			</div>
+			{#if character.image != null}
+				<div class="w-[250px] border-2 m-2" data-aos="fade-in">
+					<CharactersCard characters={character} />
+				</div>
+			{/if}
 		{/each}
 	</div>
 </div>
